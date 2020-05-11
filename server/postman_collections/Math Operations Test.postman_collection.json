@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "261ff73a-8179-4e93-bc97-b99cbe56d6dc",
+		"name": "Math Operations Test",
+		"description": "It has endpoints for various math operations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "findMedian",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/median/1.0?limit=90",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"median",
+						"1.0"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "90"
+						}
+					]
+				},
+				"description": "It finds the median(s) from the list of prime numbers for given limit n."
+			},
+			"response": [
+				{
+					"name": "findMedian sample response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/median/1.0?limit=90",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"median",
+								"1.0"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "90"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Surrogate-Control",
+							"value": "no-store"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, proxy-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "32"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 May 2020 03:54:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"response\": {\n        \"medians\": [\n            37,\n            41\n        ]\n    }\n}"
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}
