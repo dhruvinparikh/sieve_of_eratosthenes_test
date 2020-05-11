@@ -1,0 +1,50 @@
+{
+  "name": "sieve-of-eratostheneses-test",
+  "version": "1.2.1",
+  "description": "A full stack web application which finds the median of prime number given n limit",
+  "author": "dhruvinparikh93 <imsilent93@gmail.com> (https://github.com/dhruvinparikh93/)",
+  "contributors": [
+    "dhruvinparikh93 <imsilent93@gmail.com> (https://github.com/dhruvinparikh93/)"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dhruvinparikh93/sieve_of_eratosthenes_test.git"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "nodejs",
+    "express",
+    "visual-studio-code",
+    "chrome-devtools",
+    "webpack",
+    "webpack-dev-server",
+    "typestyle",
+    "react-testing-library",
+    "supertest",
+    "jest",
+    "semantic-ui",
+    "boilerplate"
+  ],
+  "files": [
+    "./client/*",
+    "./server/*"
+  ],
+  "scripts": {
+    "install": "cd client && yarn",
+    "postinstall": "cd server && yarn",
+    "pretest": "cd client && yarn build",
+    "test": "cd client && yarn test",
+    "posttest": "cd server && yarn copy && yarn test",
+    "compile": "cd client && yarn compile",
+    "postcompile": "cd server && yarn compile",
+    "build": "cd client && yarn build",
+    "postbuild": "cd server && yarn prestart",
+    "build:prod": "cd client && yarn build:prod",
+    "postbuild:prod": "cd server && yarn prestart",
+    "start:prod": "cd client && yarn build:prod",
+    "poststart:prod": "cd server && yarn start:prod",
+    "run:prod": "cd server && yarn run:prod"
+  }
+}

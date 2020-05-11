@@ -5,14 +5,15 @@ A full stack web application which finds the median of prime number given n limi
 ## Goals + Tasks
 
 - [x] Server (typescript nodejs)
-    - [ ] Express API
+    - [x] Express API
     - [x] Jests test cases
 - [x] Client (React)
     - [ ] UI framework (semantic-ui)
     - [x] Jests test cases
-- [ ] CI/CD build pipeline (not part of interview task)
-- [ ] Containerization (not part of interview task) 
-
+- [ ] CI/CD build pipeline (not part of task)
+- [ ] Containerization (not part of task) 
+- [ ] Google cloud Run (not part of task)
+ 
 #### Resources
 
 * [typescriptlang](https://www.typescriptlang.org/)

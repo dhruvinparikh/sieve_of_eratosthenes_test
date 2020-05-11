@@ -8,14 +8,14 @@ describe("Testing MathRequest with invalid data", () => {
 
   it("should reject empty JSON object", () => {
     const obj: object = {};
-    expect(MathRequest.fromLimit(obj, validAddress, errInfo)).not.toBeDefined();
+    expect(MathRequest.fromJSON(obj, validAddress, errInfo)).not.toBeDefined();
   });
 
   it("should reject invalid JSON object", () => {
     const obj: object = {
       limit: "k",
     };
-    expect(MathRequest.fromLimit(obj, validAddress, errInfo)).not.toBeDefined();
+    expect(MathRequest.fromJSON(obj, validAddress, errInfo)).not.toBeDefined();
   });
 
   it("should reject invalid limit", () => {

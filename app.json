@@ -1,0 +1,6 @@
+{
+  "name": "sieve-of-eratosthenes",
+  "options": {
+    "allow-unauthenticated": true
+  }
+}

@@ -20,7 +20,7 @@ const testMedians = [3, 5];
 
 beforeAll(() => {
   jest
-    .spyOn(MathModel.prototype, "medianfetch")
+    .spyOn(MathModel.prototype, "fetch")
     .mockImplementation((_params: any) => {});
 
   jest
@@ -93,7 +93,7 @@ describe("Test API route to find median", () => {
 
     const obj: MathMedianResult = Object.create(MathMedianResult.prototype);
     const data = Object.assign(obj, response.body);
-  
+
     expect(data.response.medians).toEqual(expect.arrayContaining(testMedians));
   });
 });

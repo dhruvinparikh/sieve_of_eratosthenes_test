@@ -35,7 +35,7 @@ describe("Test mocking", () => {
     expect(bqRequest).toBeDefined();
 
     const model = MathModel.Factory;
-    model.medianfetch(bqRequest!);
+    model.fetch(bqRequest!);
     const data: MathMedianRetrieval = model.getMedianData();
 
     expect(data).toBeInstanceOf(Error);

@@ -16,7 +16,7 @@ describe("Testing MathModel", () => {
       TestConfig.getMedianTuples().forEach((t) => {
         testReq.limit = t[1];
         const request = TestConfig.getMedianRequest(testReq);
-        model.medianfetch(request!);
+        model.fetch(request!);
         const data: MathMedianRetrieval = model.MedianData;
         expect(data).toBeInstanceOf(MathMedianResult);
 

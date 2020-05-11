@@ -73,7 +73,7 @@ export class TestConfig {
   ): MathRequest | undefined => {
     const ret = TestConfig.getMedianRequestAsJson(req);
     const errInfo: JsonParsingError = { message: undefined };
-    return ret ? MathRequest.fromLimit(ret, clientAddress, errInfo) : undefined;
+    return ret ? MathRequest.fromJSON(ret, clientAddress, errInfo) : undefined;
   };
 
   static readonly getModelConfig = (
