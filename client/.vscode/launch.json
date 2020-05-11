@@ -1,0 +1,60 @@
+{
+  // learn more about launch.json from https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome in Production",
+      "url": "http://localhost:3000/median.html",
+      "sourceMaps": true,
+      "preLaunchTask": "npm build:prod-debug",
+      "trace": "verbose",
+      "webRoot": "${workspaceFolder}",
+      "breakOnLoad": true,
+      "disableNetworkCache": true,
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome Connected to Devserver",
+      "url": "http://localhost:8080/median.html",
+      "sourceMaps": true,
+      "preLaunchTask": "npm dev",
+      "postDebugTask": "kill process in terminal",
+      "trace": "verbose",
+      "webRoot": "${workspaceFolder}",
+      "breakOnLoad": true,
+      "disableNetworkCache": true,
+    },
+	{
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome Connected to Backend",
+      "url": "http://localhost:3000/median.html",
+      "sourceMaps": true,
+      "preLaunchTask": "npm dev",
+      "postDebugTask": "kill process in terminal",
+      "trace": "verbose",
+      "webRoot": "${workspaceFolder}",
+      "breakOnLoad": true,
+      "disableNetworkCache": true,
+    },
+    {
+      "name": "Debug Jest Tests",
+      "type": "node",
+      "request": "launch",
+      "runtimeArgs": [
+        "--inspect-brk",
+        "${workspaceRoot}/node_modules/jest/bin/jest.js",
+        "--runInBand"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "NODE_ENV": "test"
+      },
+    },
+  ]
+}
