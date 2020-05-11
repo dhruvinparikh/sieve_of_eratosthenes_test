@@ -1,0 +1,75 @@
+{
+  "name": "sieve-of-eratosthenes-test-backend",
+  "version": "1.2.0",
+  "description": "Backend to find median from prime numbers upto limit n",
+  "author": "dhruvinparikh93 <imsilent93@gmail.com> (https://github.com/dhruvinparikh93/)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dhruvinparikh93/sieve_of_eratostheneses_test.git"
+  },
+  "keywords": [
+    "typescript",
+    "nodejs",
+    "express",
+    "visual-studio-code",
+    "supertest",
+    "jest",
+    "winston",
+    "helmet",
+    "boilerplate"
+  ],
+  "scripts": {
+    "lint": "tslint -p .",
+    "compile": "tsc -p .",
+    "compile:watch": "tsc -w -p .",
+    "precopy": "rimraf build/client && mkdirp build/client/static",
+    "copy": "copyfiles -f ../client/dist/* build/client/static/ && copyfiles -f ../client/config/* config/",
+    "prestart": "yarn copy && yarn compile",
+    "start": "echo-cli Starting the backend... && node ./build/srv/main.js",
+    "prestart:prod": "yarn prestart",
+    "start:prod": "echo-cli Starting the backend... && cross-env NODE_ENV=production node ./build/srv/main.js",
+    "prod": "yarn start:prod",
+    "prestart:dev": "yarn prestart",
+    "start:dev": "echo-cli Starting the backend... && cross-env USE_DEV_WEBSERVER=true node ./build/srv/main.js",
+    "dev": "yarn start:dev",
+    "test": "cross-env NODE_ENV=test jest",
+    "run:prod": "echo-cli Starting the backend... && cross-env NODE_ENV=production node ./build/srv/main.js"
+  },
+  "dependencies": {
+    "express": "4.17.1",
+    "express-static-gzip": "^2.0.6",
+    "helmet": "^3.22.0",
+    "http-proxy-middleware": "^1.0.3",
+    "node-cache": "^5.1.0",
+    "node-fetch": "^2.6.0",
+    "serve-favicon": "^2.5.0",
+    "winston": "3.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "4.17.6",
+    "@types/helmet": "^0.0.45",
+    "@types/http-proxy-middleware": "^0.19.3",
+    "@types/jest": "25.2.1",
+    "@types/node": "13.11.1",
+    "@types/node-cache": "^4.2.5",
+    "@types/node-fetch": "2.5.6",
+    "@types/serve-favicon": "^2.5.0",
+    "@types/supertest": "^2.0.8",
+    "@types/winston": "^2.4.4",
+    "copyfiles": "^2.2.0",
+    "cross-env": "^7.0.2",
+    "echo-cli": "^1.0.8",
+    "jest": "25.3.0",
+    "mkdirp": "^1.0.3",
+    "rimraf": "^3.0.2",
+    "supertest": "^4.0.2",
+    "ts-jest": "25.3.1",
+    "tslib": "1.11.1",
+    "tslint": "6.1.1",
+    "typescript": "3.8.3"
+  },
+  "resolutions": {
+    "minimist": "^1.2.2"
+  }
+}
