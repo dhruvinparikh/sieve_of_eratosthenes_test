@@ -56,7 +56,8 @@ export class MathRequest {
       // in the incoming API request is malicious until proven otherwise.
       const dataJson: IMathRequest = {
         clientAddress: MathRequest.getClientAddress(clientAddress),
-        limit: MathRequest.getLimit(objJson.limit),
+        // the query params from the client is of type 'string'
+        limit: MathRequest.getLimit(parseInt(objJson.limit)),
       };
       MathRequest.validateRequestParams(dataJson);
       return new MathRequest(dataJson);
