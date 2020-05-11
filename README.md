@@ -7,9 +7,9 @@ A full stack web application which finds the median of prime number given n limi
 - [x] Server (typescript nodejs)
     - [ ] Express API
     - [x] Jests test cases
-- [ ] Client (React)
+- [x] Client (React)
     - [ ] UI framework (semantic-ui)
-    - [ ] Jests test cases
+    - [x] Jests test cases
 - [ ] CI/CD build pipeline (not part of interview task)
 - [ ] Containerization (not part of interview task) 
 
