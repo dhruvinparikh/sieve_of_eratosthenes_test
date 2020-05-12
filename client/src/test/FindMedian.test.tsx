@@ -38,10 +38,16 @@ describe("Testing QueryPageContainer", () => {
         <FindMedian />
       </Router>
     );
-
     const cssButton = "button";
-
     const element = container.querySelector(cssButton);
     expect(element?.disabled).toBe(true);
+  });
+
+  test("Button should be disabled when input is invalid", async () => {
+    // test suite when input is invalid
+  });
+
+  test("Button should be enabled when input is valid", async () => {
+    // test suite when input is valid
   });
 });
