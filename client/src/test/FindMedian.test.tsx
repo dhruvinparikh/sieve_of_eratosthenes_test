@@ -4,7 +4,7 @@
  */
 import * as React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import { render } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { FindMedian } from "../components/FindMedian";
 
@@ -43,11 +43,43 @@ describe("Testing QueryPageContainer", () => {
     expect(element?.disabled).toBe(true);
   });
 
+  test("Input value should be same as filled", async () => {
+    const { container } = render(
+      <Router>
+        <FindMedian />
+      </Router>
+    );
+    const cssInput = "input";
+    const element = container.querySelector(cssInput);
+    fireEvent.change(element!, { target: { value: "23" } });
+    expect(element?.value).toBe("23");
+  });
+
   test("Button should be disabled when input is invalid", async () => {
-    // test suite when input is invalid
+    const { container } = render(
+      <Router>
+        <FindMedian />
+      </Router>
+    );
+    const cssInput = "input";
+    const elementInput = container.querySelector(cssInput);
+    fireEvent.change(elementInput!, { target: { value: "kk" } });
+    const cssButton = "button";
+    const element = container.querySelector(cssButton);
+    expect(element?.disabled).toBe(true);
   });
 
   test("Button should be enabled when input is valid", async () => {
-    // test suite when input is valid
+    const { container } = render(
+      <Router>
+        <FindMedian />
+      </Router>
+    );
+    const cssInput = "input";
+    const elementInput = container.querySelector(cssInput);
+    fireEvent.change(elementInput!, { target: { value: "200" } });
+    const cssButton = "button";
+    const element = container.querySelector(cssButton);
+    expect(element?.disabled).toBe(false);
   });
 });
