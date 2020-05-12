@@ -4,7 +4,7 @@
 
 // The 'main' or 'central' data piece from the result provided by median function
 export class MathMedianData {
-  readonly medians?: Array<number>;
+  readonly medians?: number[];
 }
 
 // API response. Contains the 'main' piece of data
@@ -57,7 +57,7 @@ export class MathRequest {
       const dataJson: IMathRequest = {
         clientAddress: MathRequest.getClientAddress(clientAddress),
         // the query params from the client is of type 'string'
-        limit: MathRequest.getLimit(parseInt(objJson.limit)),
+        limit: MathRequest.getLimit(parseInt(objJson.limit, 10)),
       };
       MathRequest.validateRequestParams(dataJson);
       return new MathRequest(dataJson);
