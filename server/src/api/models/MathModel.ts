@@ -74,7 +74,6 @@ export interface IMathFetcher extends IMathMedianData {
 }
 
 export class MathModel implements IMathFetcher {
-
   // Use .Config setter once to set the configuration.
   static set Config(config: MathModelConfig) {
     MathModel.s_config = config;
@@ -122,7 +121,7 @@ export class MathModel implements IMathFetcher {
 
     this.sieveOfEratosthenes();
   }
-  
+
   // Use .MedianData getter to get either the data fetched or an Error object.
   get MedianData(): MathMedianRetrieval {
     return this.m_median_result;
@@ -145,7 +144,7 @@ export class MathModel implements IMathFetcher {
     const request = this.m_request as MathRequest;
 
     try {
-      const limit = (request.Limit as unknown) as number;
+      const limit = request.Limit;
       const isPrime: boolean[] = new Array(limit + 1).fill(true);
       isPrime[0] = false;
       isPrime[1] = false;
