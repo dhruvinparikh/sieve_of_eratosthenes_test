@@ -85,6 +85,7 @@ The backend subproject:
 
 - [x] Server (typescript nodejs)
     - [x] Express API
+    - [x] Limit API calls (not part of task)
     - [x] Jests test cases
 - [x] Client (React)
     - [x] UI framework (semantic-ui)
