@@ -11,6 +11,13 @@ export class MedianBackendRequest {
       // Can only happen if code is incorrectly modified
       throw new Error("Limit is missing");
     }
+    if (!Number.isInteger(parseInt(this.requestData.limit, 10))) {
+      throw new Error("Limit must be a number");
+    }
+
+    if (!(parseInt(this.requestData.limit, 10) > 1)) {
+      throw new Error("Limit must be greater than 1");
+    }
   }
 
   public readonly toString = (): string => {
