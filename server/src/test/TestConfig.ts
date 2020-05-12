@@ -27,6 +27,8 @@ export class TestConfig {
       "-1",
       "delete * from users",
       "drop&nbsp;users",
+      "0",
+      "1",
       undefined,
     ];
 

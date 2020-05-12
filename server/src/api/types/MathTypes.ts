@@ -116,7 +116,7 @@ export class MathRequest {
   }
 
   private static isLimitValid(lmt: number): boolean {
-    if (MathRequest.isNumber(lmt)) {
+    if (MathRequest.isNumber(lmt) && lmt > 1) {
       return true;
     }
     return false;
