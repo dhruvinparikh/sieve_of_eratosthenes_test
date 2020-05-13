@@ -15,10 +15,7 @@ import {
   MathRequest,
 } from "@backend/types/MathTypes";
 
-export {
-  MathMedianRetrieval,
-  MathMedianResult,
-};
+export { MathMedianRetrieval, MathMedianResult, MedianBackendRequest,IBackendMedianRequestData };
 
 // Extend data storage interface and add data fetching capability.
 interface IMathBackendClient extends IMathMedianData {
@@ -34,9 +31,11 @@ export class MathBackendManager implements IMathBackendClient {
     return this.m_queryResult;
   }
 
-  public readonly fetch = async (
-    request: IBackendMedianRequestData
-  ): Promise<boolean> => {
+  public getMedianData(): MathMedianRetrieval {
+    return this.m_queryResult;
+  }
+
+  public async fetch(request: IBackendMedianRequestData): Promise<boolean> {
     try {
       this.m_queryParams = new MedianBackendRequest(request);
       await this.fetchData();
@@ -50,7 +49,7 @@ export class MathBackendManager implements IMathBackendClient {
     // Returns 'true' to facilitate timeout handling (implemented as
     // racing with another Promise that returns 'false').
     return Promise.resolve(true);
-  };
+  }
 
   /********************** private methods and data ************************/
 

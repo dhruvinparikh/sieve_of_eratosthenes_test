@@ -13,7 +13,7 @@ import {
   InputOnChangeData,
   Message,
   Segment,
-  Menu
+  Menu,
 } from "semantic-ui-react";
 import { BaseComponent } from "./BaseComponent";
 import {
@@ -59,7 +59,7 @@ const cssButton = style({
 
 //#endregion
 
-const FindMedianContent: React.FC = (_props) => {
+export const FindMedianContent: React.FC = (_props) => {
   // API call is in progress
   const [inFlight, setInFlight] = React.useState<boolean>(false);
 
@@ -195,7 +195,7 @@ const FindMedianContent: React.FC = (_props) => {
   //#endregion
 };
 
-const Navigation: React.FC = _props => {
+export const Navigation: React.FC = (_props) => {
   return (
     <nav>
       <Menu vertical compact borderless>
